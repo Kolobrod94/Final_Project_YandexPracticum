@@ -1,0 +1,22 @@
+1 Zadanie
+--------------------------------------------------------------
+SELECT "Couriers".login, Count("Orders"."courierId")
+FROM "Couriers" 
+JOIN "Orders" ON "Couriers".id = "Orders"."courierId"
+GROUP BY login;
+
+--------------------------------------------------------------
+
+
+
+2 Zadanie
+--------------------------------------------------------------
+SELECT track,
+  CASE
+   WHEN finished = true THEN '2'
+   WHEN canсelled = true THEN '-1'
+   WHEN inDelivery = true THEN '1'
+   ELSE '0'
+  END
+FROM "Orders";
+
