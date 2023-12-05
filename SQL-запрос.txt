@@ -1,11 +1,10 @@
 1 Zadanie
 --------------------------------------------------------------
-SELECT "Couriers".login, Count("Orders".track)
-FROM "Couriers"
-JOIN "Orders" ON "Couriers".id = "Orders"."courierId" AND "Orders"."inDelivery" = true
+SELECT "Couriers".login, Count("Orders".*)
+FROM "Couriers" 
+JOIN "Orders" ON "Couriers".id = "Orders"."courierId"
+WHERE "Orders"."inDelivery" = true
 GROUP BY login;
-
---------------------------------------------------------------
 
 
 
